@@ -1,0 +1,12 @@
+[Unit]
+Description=CLI to parse Actisense-NGT1 NMEA2000 and publish them via MQTT and store into InfluxDB
+After=nmea2kstreamer.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nmea2kfluxlite --config /etc/umg/conf.json
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

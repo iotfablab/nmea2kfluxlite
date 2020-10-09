@@ -1,0 +1,12 @@
+[Unit]
+Description=Streaming Server for Canboat NMEA2000 on Actisense NGT-1
+After=influxdb.service
+
+[Service]
+Type=simple
+ExecStart= /bin/sh -c "/usr/bin/actisense-serial -r /dev/ttymxc2 | /usr/bin/analyzer -json | /usr/bin/n2kd"
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
