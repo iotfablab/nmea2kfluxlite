@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+import nmea2kfluxlite
+
+if __name__ == "__main__":
+    nmea2kfluxlite.main()

@@ -1,0 +1,104 @@
+{
+    "device":{
+        "name": "UMG",
+        "ID": "0000"
+    },
+    "influx": {
+      "host": "localhost"
+    },
+    "mqtt": {
+      "broker": "localhost",
+      "port": 1883,
+      "username": null,
+      "password": null,
+      "TLS": {
+          "enable": false,
+          "insecure": false,
+          "tls_version": "tlsv1.2",
+          "certs": {
+            "certdir": "/etc/ssl/mqtt/",
+            "cafile": "ca.crt",
+            "certfile": "mqtt-client.crt",
+            "keyfile": "mqtt-client.key"
+          }
+      }
+    },
+    "nmea2k": {
+      "udp_port": 8095,
+      "topics": [
+        "nmea2000"
+      ],
+      "pgnConfigs": {
+        "130311": {
+          "for": "Environmental Parameters",
+          "fieldLabels": [
+            "Temperature",
+            "Atmospheric Pressure"
+          ]
+        },
+        "127250": {
+          "for": "Vessel Heading",
+          "fieldLabels": [
+            "Heading"
+          ]
+        },
+        "127251": {
+          "for": "Rate of Turn",
+          "fieldLabels": [
+            "Rate"
+          ]
+        },
+        "129025": {
+          "for": "GPS Navigation",
+          "fieldLabels": [
+            "Latitude",
+            "Longitude"
+          ]
+        },
+        "127245": {
+          "for": "Rudder",
+          "fieldLabels": [
+            "Direction Order",
+            "Position"
+          ]
+        },
+        "127501": {
+          "for": "Binary Switch Bank",
+          "fromSource": 1,
+          "fieldLabels": [
+            "Indicator1",
+            "Indicator2"
+          ]
+        },
+        "127488": {
+          "for": "Engine Speed",
+          "fieldLabel": [
+            "Engine Speed"
+          ]
+        },
+        "127489": {
+          "for": "Engine Parameters",
+          "fieldLabels": [
+            "Engine oil pressure",
+            "Engine temp.",
+            "Fuel rate"
+          ]
+        },
+        "129026": {
+          "for": "SOG/COG",
+          "fieldLabels": [
+            "SOG",
+            "COG"
+          ]
+        },
+        "127257": {
+          "for": "Attitude(Yaw,Pitch,Roll)",
+          "fieldLabels": [
+            "Yaw",
+            "Pitch",
+            "Roll"
+          ]
+        }
+      }
+    }
+  }
